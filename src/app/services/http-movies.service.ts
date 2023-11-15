@@ -29,4 +29,9 @@ export class HttpMoviesService {
       .pipe(tap(console.log));
   }
 
+  putMovie(movie: Movie) {
+    return this.http.put(this.url + '/' + movie.id, movie)
+      .pipe(tap(console.log));
+  }
+
 }
