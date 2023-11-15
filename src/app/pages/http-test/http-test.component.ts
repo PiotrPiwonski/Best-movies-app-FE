@@ -60,4 +60,8 @@ export class HttpTestComponent {
     this.http.makeError()
       .subscribe({error: (err: string) => this.errorMessage = err});
   }
+
+  headers() {
+    this.http.headers().subscribe();
+  }
 }
