@@ -24,18 +24,23 @@ export class HttpMoviesService {
   //     .pipe(tap(console.log));
   // }
 
-  postMovie(movie: Movie) {
-    return this.http.post(this.url, movie)
+  postMovie(movie: Movie): Observable<Movie> {
+    return this.http.post<Movie>(this.url, movie)
       .pipe(tap(console.log));
   }
 
-  putMovie(movie: Movie) {
-    return this.http.put(this.url + '/' + movie.id, movie)
+  putMovie(movie: Movie): Observable<Movie> {
+    return this.http.put<Movie>(this.url + '/' + movie.id, movie)
       .pipe(tap(console.log));
   }
 
-  patchMovie(movie: Partial<Movie>) {
-    return this.http.patch(this.url + '/' + movie.id, movie)
+  patchMovie(movie: Partial<Movie>): Observable<Movie> {
+    return this.http.patch<Movie>(this.url + '/' + movie.id, movie)
+      .pipe(tap(console.log));
+  }
+
+  deleteMovie(id: string): Observable<{}> {
+    return this.http.delete<{}>(this.url + '/' + id)
       .pipe(tap(console.log));
   }
 
