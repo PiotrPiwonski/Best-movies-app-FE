@@ -9,15 +9,13 @@ import {NgForm} from '@angular/forms';
 })
 export class AddMovieComponent implements OnInit {
 
-  model: Partial<Movie>;
+  model: Partial<Movie> = {};
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.model = {title: 'Jakiś film'};
-  }
+  ngOnInit(): void { }
 
-  send(movieForm: NgForm) {
-    console.log(movieForm)
+  send() {
+    console.log(this.model)
   }
 }
