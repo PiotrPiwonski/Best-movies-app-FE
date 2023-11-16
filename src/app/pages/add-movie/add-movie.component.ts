@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Movie} from '../../models/movie';
-import {NgForm} from '@angular/forms';
+import {NgForm, NgModel} from '@angular/forms';
 import {HttpService} from '../../services/http.service';
 import {HttpMoviesService} from '../../services/http-movies.service';
 
@@ -32,5 +32,9 @@ export class AddMovieComponent implements OnInit {
       result => console.log(result),
       error => console.error(error)
     );
+  }
+
+  printModel(title: NgModel) {
+    console.log(title);
   }
 }
